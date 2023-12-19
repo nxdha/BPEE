@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('./bg.png'); /* Replace 'background.jpg' with the path to your background image */
+    background-image: url('../../public/images/bg.png');
     background-size: cover;
     background-position: top;
     font-family: Arial, sans-serif;

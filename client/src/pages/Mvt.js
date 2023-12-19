@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Mvt.css'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function () {
+
   const navigate = useNavigate();
-  const handleClick1 = ()=> {
-    navigate("/view");
+  const handleClick1 = ()=> { 
+    axios.put("http://localhost:3001/auth/getticket",{name: localStorage.getItem("name")}).then((response)=> {
+      console.log(response.data);
+      if(response.data.error) {
+        alert("No tickets to view")
+      }
+      else
+        navigate("/view");
+  })
   }
 
   const handleClick2 = ()=> {
@@ -15,12 +24,14 @@ export default function () {
   const handleClick3 = ()=> {
     navigate("/timing");
   }
+
+  const name = localStorage.getItem("name");
   
   return (
     <div className="App">
     <div className="header-container">
       <div className="header-text">
-        <b>WELCOME JOHN DOE!</b>
+        <b>WELCOME {name}</b>
       </div>
     </div>
 

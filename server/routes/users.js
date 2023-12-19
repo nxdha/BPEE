@@ -23,14 +23,15 @@ router.put("/register", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+router.put("/login", async (req, res) => {
   try {
-    let user = await userModel.findOne({ name: req.body.name });
+    console.log(req.body);
+    let user = await userModel.findOne({ email: req.body.email });
     let flag = -1;
     if (!user) {
       flag = 1;
       user = { name: "User not found" };
-      res.status(200).json(user);
+      res.status(200).json({error: true});
     }
     if (flag == -1) {
       let validPassword = await bcrypt.compare(
@@ -39,13 +40,68 @@ router.post("/login", async (req, res) => {
       );
       if (!validPassword) {
         user = { name: "Wrong password" };
-        res.status(200).json(user);
+        res.status(200).json({error: true});
         flag = 0;
       }
     }
     if (flag == -1) res.status(200).json(user);
   } catch (err) {
     res.status(200).json("user doesn't exist");
+  }
+});
+
+router.put("/ticket", async (req, res) => {
+  try {
+    console.log(req.body);
+    let user = await userModel.findOne({ name: req.body.name });
+    if(!user) {
+      res.status(400).json({error:true});
+    }
+
+    const ticket = {
+      destination: req.body.end,
+      startroute: req.body.start,
+      numberOfTickets: req.body.number,
+      fare: req.body.fare
+    }
+
+    const result = await userModel.updateOne(
+      { name: req.body.name },
+      { $set: { ticket: ticket } }
+    );
+
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.put("/getdata", async (req, res) => {
+  try {
+    console.log(req.body);
+    let user = await userModel.findOne({ name: req.body.name });
+    if(!user) {
+      res.status(400).json({error:true});
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+router.put("/getticket", async (req, res) => {
+  try {
+    console.log(req.body);
+    let user = await userModel.findOne({ name: req.body.name });
+    let ticket = user.ticket.startroute
+    if(!ticket) {
+      res.status(200).json({error:true});
+    }
+    else
+      res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
   }
 });
 

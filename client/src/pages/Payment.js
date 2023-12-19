@@ -2,6 +2,22 @@ import React from 'react'
 import '../css/Payment.css'
 
 export default function Payment() {
+  function showPaymentForm(formId) {
+    var forms = document.querySelectorAll('.payment-form');
+    forms.forEach(function (form) {
+      form.style.display = 'none';
+    });
+
+    const selectedForm = document.getElementById(formId);
+    if (selectedForm) {
+      selectedForm.style.display = 'block';
+    }
+  }
+
+  function processPayment() {
+    
+  }
+
   return (
     <div className="content-container">
       <div className="header">
@@ -13,21 +29,17 @@ export default function Payment() {
         <div className="payment-option" onClick={() => showPaymentForm('netbankingForm')}>Netbanking</div>
       </div>
       <div id="cardForm" className={`payment-form ${selectedForm === 'cardForm' ? 'active' : ''}`}>
-        {/* Card payment form */}
-        {/* ... */}
+    
         <button onClick={processPayment}>Pay Now</button>
       </div>
       <div id="upiForm" className={`payment-form ${selectedForm === 'upiForm' ? 'active' : ''}`}>
-        {/* UPI payment form */}
-        {/* ... */}
+  
         <button onClick={processPayment}>Pay Now</button>
       </div>
       <div id="netbankingForm" className={`payment-form ${selectedForm === 'netbankingForm' ? 'active' : ''}`}>
-        {/* Netbanking payment form */}
-        {/* ... */}
+      
         <div className="netbanking-icons">
-          {/* Bank icons */}
-          {/* ... */}
+         
         </div>
       </div>
     </div>
