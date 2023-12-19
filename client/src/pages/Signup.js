@@ -41,7 +41,7 @@ export default function Signup() {
     </div>
     <form action="MVT.html" className="login-form">
         <input type="text" onChange = {(e)=> {setName(e.target.value)}} name="name" placeholder="Full Name" />
-        <input type="number" onChange = {(e)=> {setPhone(e.target.value)}} name="age" placeholder="Age" />
+        <input type="number" onChange = {(e)=> {setAge(e.target.value)}} name="age" placeholder="Age" />
         <input type="email" onChange = {(e)=> {setEmail(e.target.value)}} name="email" placeholder="Email Address" />
         <input type="password" onChange = {(e)=> {setPassword(e.target.value)}} name="password" placeholder="Password" />
         <input type="tel" onChange = {(e)=> {setPhone(e.target.value)}} name="phone" placeholder="Phone No." />
