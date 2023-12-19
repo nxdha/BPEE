@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup"
+import Mvt from "./pages/Mvt";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -19,7 +20,12 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <Signup/>,
     errorElement: <div>Something went wrong</div>,
-  },  
+  },
+  {
+    path: "/mvt",
+    element: <Mvt/>,
+    errorElement: <div>Something went wrong</div>,
+  },   
 ]);
 
 

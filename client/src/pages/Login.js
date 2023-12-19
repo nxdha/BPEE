@@ -8,7 +8,7 @@ export default function Login() {
   }
 
   const authenticate = ()=> {
-
+    navigate("/mvt");
   }
 
   return (

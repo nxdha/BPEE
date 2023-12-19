@@ -1,7 +1,21 @@
 import React from 'react'
 import '../css/Mvt.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function () {
+  const navigate = useNavigate();
+  const handleClick1 = ()=> {
+    navigate("/view");
+  }
+
+  const handleClick2 = ()=> {
+    navigate("/book");
+  }
+
+  const handleClick3 = ()=> {
+    navigate("/timing");
+  }
+  
   return (
     <div className="App">
     <div className="header-container">
@@ -13,26 +27,27 @@ export default function () {
     <div className="content-container">
       <div className="content">
         <div className="image-container">
-          <img src={ticketImage} alt="ticket" />
+          <img src='/images/ticket.png' alt="ticket" />
         </div>
         <div className="header"></div>
-        <a href="viewticket.html">VIEW TICKETS</a>
+        <button onClick={handleClick1}>VIEW TICKETS</button>
       </div>
 
       <div className="content">
         <div className="image-container">
-          <img src={bookingImage} alt="booking" />
+          <img src='/images/booking.png' alt="booking" />
         </div>
         <div className="header"></div>
-        <a href="ticketbook.html">BOOK TICKETS</a>
+        <button onClick={handleClick2}>BOOK TICKETS</button>
+        
       </div>
 
       <div className="content">
         <div className="image-container">
-          <img src={timingImage} alt="metrotime" />
+          <img src='/images/timing.jpeg' alt="metrotime" />
         </div>
         <div className="header">
-          <a href="timings.html">METRO TIMINGS</a>
+        <button onClick={handleClick3}>METRO TIMINGS</button>
         </div>
       </div>
     </div>
