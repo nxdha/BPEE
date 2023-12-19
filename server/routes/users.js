@@ -3,10 +3,11 @@ const userModel = require("../models/Users");
 const bcrypt = require("bcrypt");
 
 
-router.post("/register", async (req, res) => {
+router.put("/register", async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    console.log(req.body);
 
     const newUser = new userModel({
       name: req.body.name,
