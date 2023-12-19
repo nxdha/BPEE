@@ -105,4 +105,24 @@ router.put("/getticket", async (req, res) => {
   }
 });
 
+router.put("/delete", async (req, res) => {
+  try {
+    console.log(req.body);
+    let user = await userModel.findOne({ name: req.body.name });
+    if(!user.ticket) {
+      res.status(200).json({error:true});
+    }
+    else
+    {
+      const result = await userModel.updateOne(
+        {name:req.body.name },
+        { $unset: { ticket: {} } }
+      );
+      res.status(200).json(result);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = router;

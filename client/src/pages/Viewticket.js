@@ -2,8 +2,11 @@ import React, { useEffect } from 'react'
 import '../css/Viewticket.css'
 import axios from 'axios'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function Viewticket() {
+  const navigate = useNavigate()
   const [start,setStart] = useState("");
   const [end,setEnd] = useState("");
 
@@ -34,9 +37,7 @@ export default function Viewticket() {
       </div>
 
       <div className="square-container metro-ticket-container">
-        <a href="afterview.html">
-          <img src="/images/qr.png" alt="QR Code" />
-        </a>
+          <img src="/images/qr.png" onClick={()=> {navigate("/afterview")}} alt="QR Code" />
         <p style={{ margin: '5px 0' }}>Start Route: {start}</p>
         <p style={{ margin: 0 }}>End Route: {end}</p>
       </div>

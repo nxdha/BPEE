@@ -39,8 +39,8 @@ export default function Ticketbook() {
   const handleSubmit = (event)=> {
     event.preventDefault();
 
-    let a=0; 
-    let b=0;
+    let a=1; 
+    let b=1;
     for(let i=0 ;i<stations.length; i++) {
       if(stations[i] === start) {
         a=i;

@@ -7,6 +7,10 @@ import View from "./pages/Viewticket"
 import Book from "./pages/Ticketbook"
 import Timing from "./pages/Timings"
 import Payment from "./pages/Payment"
+import Afterview from "./pages/Afterview"
+import Afterpayment from "./pages/Afterpayment"
+import Contact from "./pages/Contact"
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -45,11 +49,26 @@ const router = createBrowserRouter([
     element: <Timing/>,
     errorElement: <div>Something went wrong</div>,
   }, 
-  // {
-  //   path: "/payment",
-  //   element: <Payment/>,
-  //   errorElement: <div>Something went wrong</div>,
-  // }, 
+  {
+    path: "/afterview",
+    element: <Afterview/>,
+    errorElement: <div>Something went wrong</div>,
+  },
+  {
+    path: "/payment",
+    element: <Payment/>,
+    errorElement: <div>Something went wrong</div>,
+  }, 
+  {
+    path: "/Afterpayment",
+    element: <Afterpayment/>,
+    errorElement: <div>Something went wrong</div>,
+  }, 
+  {
+    path: "/contact",
+    element: <Contact/>,
+    errorElement: <div>Something went wrong</div>,
+  },
 ]);
 
 
