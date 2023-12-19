@@ -1,6 +1,17 @@
 import React from 'react'
+import '../css/Signup.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+  const navigate = useNavigate();
+  const handleLogin = ()=> {
+    navigate("/login");
+  }
+
+  const register = ()=> {
+    
+  }
+
   return (
     <div className="content-container">
     <div className="header">
@@ -17,16 +28,12 @@ export default function Signup() {
           placeholder="Confirm Password"
         />
         <input type="tel" name="phoneNo" placeholder="Phone No." />
-        <button type="submit">Sign Up</button>
+        <button type="submit" onClick={register}>Sign Up</button>
       </form>
 
       <div className="signup-link">
         Already have an account?{' '}
-        <a href="metrologin.html">
-          <b>
-            <u>Login</u>
-          </b>
-        </a>
+        <button onClick={handleLogin}>Login</button>
       </div>
     </div>
   );

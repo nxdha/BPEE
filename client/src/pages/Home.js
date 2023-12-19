@@ -15,9 +15,7 @@ export default function Home() {
         </div>
         <nav id="nav">
           <a href="contact.html">Contact Us</a>
-          <a href="metrosignup.html">
             <button onClick={handleLogin}>Login / Sign Up</button>
-          </a>
         </nav>
       </header>
       <div className="intro-container">
