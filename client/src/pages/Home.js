@@ -1,7 +1,12 @@
 import React from 'react'
 import '../css/Home.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
+  const handleLogin = ()=> {
+    navigate("/login");
+  }
   return (
     <div>
       <header>
@@ -10,9 +15,7 @@ export default function Home() {
         </div>
         <nav id="nav">
           <a href="contact.html">Contact Us</a>
-          <a href="metrosignup.html">
-            <button>Login / Sign Up</button>
-          </a>
+            <button onClick={handleLogin}>Login / Sign Up</button>
         </nav>
       </header>
       <div className="intro-container">
