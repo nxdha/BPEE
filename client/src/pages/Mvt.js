@@ -1,38 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../css/Mvt.css'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function () {
+
+  const navigate = useNavigate();
+  const handleClick1 = ()=> { 
+    axios.put("http://localhost:3001/auth/getticket",{name: localStorage.getItem("name")}).then((response)=> {
+      console.log(response.data);
+      if(response.data.error) {
+        alert("No tickets to view")
+      }
+      else
+        navigate("/view");
+  })
+  }
+
+  const handleClick2 = ()=> {
+    navigate("/book");
+  }
+
+  const handleClick3 = ()=> {
+    navigate("/timing");
+  }
+
+  const name = localStorage.getItem("name");
+  
   return (
     <div className="App">
     <div className="header-container">
       <div className="header-text">
-        <b>WELCOME JOHN DOE!</b>
+        <b>WELCOME {name}</b>
       </div>
     </div>
 
     <div className="content-container">
       <div className="content">
         <div className="image-container">
-          <img src={ticketImage} alt="ticket" />
+          <img src='/images/ticket.png' alt="ticket" />
         </div>
         <div className="header"></div>
-        <a href="viewticket.html">VIEW TICKETS</a>
+        <button onClick={handleClick1}>VIEW TICKETS</button>
       </div>
 
       <div className="content">
         <div className="image-container">
-          <img src={bookingImage} alt="booking" />
+          <img src='/images/booking.png' alt="booking" />
         </div>
         <div className="header"></div>
-        <a href="ticketbook.html">BOOK TICKETS</a>
+        <button onClick={handleClick2}>BOOK TICKETS</button>
+        
       </div>
 
       <div className="content">
         <div className="image-container">
-          <img src={timingImage} alt="metrotime" />
+          <img src='/images/timing.jpeg' alt="metrotime" />
         </div>
         <div className="header">
-          <a href="timings.html">METRO TIMINGS</a>
+        <button onClick={handleClick3}>METRO TIMINGS</button>
         </div>
       </div>
     </div>
