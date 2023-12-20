@@ -30,7 +30,7 @@ body {
   }
 
   #logo img {
-    width: 40px;
+    width: 30px;
     padding: 10px;
     background-color: white;
     border-radius: 50%;
@@ -54,7 +54,7 @@ body {
     color: #000000;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 20px;
+    margin-left: 30px;
     border-radius: 8px;
     padding: 10px 20px;
   }
@@ -63,10 +63,10 @@ body {
     background-color: rgba(28, 27, 27, 0.747);
     padding: 20px;
     border-radius: 8px;
-    margin: 120px;
+    margin: 170px;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 39px;
     margin: 0;
   }

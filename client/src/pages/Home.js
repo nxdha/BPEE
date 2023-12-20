@@ -14,7 +14,7 @@ export default function Home() {
     <div>
       <header>
         <div id="logo">
-          <img src="./metro logo.jpg" alt="" /> KOCHI METRO
+          <img src="../images/metro logo.jpg" alt="" /> KOCHI METRO
         </div>
         <nav id="nav">
           <button onClick={handleContact}>Contact Us</button>
