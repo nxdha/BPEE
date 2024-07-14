@@ -66,5 +66,17 @@ To get a local copy up and running, follow these steps:
 
 ### Installation Steps
 1. **Clone the repository:**
-   git clone https://github.com/nxdha/metro-management-system.git
+   ```sh
+   git clone https://github.com/nxdha/metro-management-system.git .
    cd metro-management-system
+2. **Install NPM packages:**
+   ```sh
+   npm install
+3. **Set up the environment variables:**
+   Create a .env file in the root directory and add the necessary environment variables (e.g., MongoDB URI, payment gateway credentials).
+4. **Start the server:**
+   ```sh
+   npm start
+5. **Access the application:**
+   Open your web browser and go to http://localhost:3000 to view the application.
+   
