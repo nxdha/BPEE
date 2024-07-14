@@ -1,7 +1,7 @@
 # Metro Management System
 
 ## Overview
-A Metro Management System is a computer or web-based system that manages the functioning of a metro system. This DBMS project aims to improve the efficiency and accuracy of Kochi Metro by automating the ticket booking process and keeping track of journey information. This system will help make the entire operation paperless. The primary objective of this project is to develop a robust and user-friendly database system that powers the Metro Management System website. This database will serve as the backbone, facilitating seamless storage, retrieval, and manipulation of critical information related to the metro network, stations, schedules, fare details, and passenger data.
+A Metro Management System is a computer or web-based system that manages the functioning of a metro system. This DBMS project aims to improve the efficiency and accuracy of Metro by automating the ticket booking process and keeping track of journey information. This system will help make the entire operation paperless. The primary objective of this project is to develop a robust and user-friendly database system that powers the Metro Management System website. This database will serve as the backbone, facilitating seamless storage, retrieval, and manipulation of critical information related to the metro network, stations, schedules, fare details, and passenger data.
 
 ## Project Scope
 The scope of this project includes the following features:
