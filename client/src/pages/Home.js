@@ -1,7 +1,15 @@
 import React from 'react'
 import '../css/Home.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+  const navigate = useNavigate();
+  const handleLogin = ()=> {
+    navigate("/login");
+  }
+  const handleContact = ()=> {
+    navigate("/contact");
+  }
   return (
     <div>
       <header>
@@ -9,10 +17,8 @@ export default function Home() {
           <img src="./metro logo.jpg" alt="" /> KOCHI METRO
         </div>
         <nav id="nav">
-          <a href="contact.html">Contact Us</a>
-          <a href="metrosignup.html">
-            <button>Login / Sign Up</button>
-          </a>
+          <button onClick={handleContact}>Contact Us</button>
+            <button onClick={handleLogin}>Login / Sign Up</button>
         </nav>
       </header>
       <div className="intro-container">
